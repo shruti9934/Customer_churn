@@ -41,10 +41,10 @@ online security and payment method. Month-to-month customers churn at 42.7% vs. 
 ## Quick start
 
 ```bash
-git clone https://github.com/shruti9934/customer-churn-prediction.git
-cd customer-churn-prediction
+git clone https://github.com/shruti9934/Customer_churn.git
+cd Customer_churn
 python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt   # app-only: requirements.txt
 
 python -m churn.eda          # charts -> reports/figures
 python -m churn.train        # trains + compares all models (~4 min), saves models/churn_model.joblib
@@ -52,6 +52,13 @@ streamlit run app.py         # http://localhost:8501
 ```
 
 `python -m churn.train --fast` runs a tiny grid in ~30 seconds if you just want to check everything works.
+
+### Deploy (free) on Streamlit Community Cloud
+
+1. Sign in at <https://share.streamlit.io> with GitHub.
+2. **Create app → Deploy a public app from GitHub**, repository `shruti9934/Customer_churn`, branch `main`,
+   main file `app.py`. In *Advanced settings* choose Python 3.13.
+3. Click **Deploy**. The trained model is committed in `models/`, so the app starts without retraining.
 
 ### With Docker
 

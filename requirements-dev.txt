@@ -1,0 +1,4 @@
+# Everything needed to retrain all models (incl. the PyTorch network) and run the tests.
+-r requirements.txt
+torch>=2.2
+pytest>=8.0
